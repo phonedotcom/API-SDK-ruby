@@ -9,7 +9,8 @@ Method | HTTP request | Description
 [**delete_account_media**](MediaApi.md#delete_account_media) | **DELETE** /accounts/{account_id}/media/{media_id} | Delete an individual media record
 [**get_account_media**](MediaApi.md#get_account_media) | **GET** /accounts/{account_id}/media/{media_id} | Show details of an individual media recording (Greeting or Hold Music)
 [**list_account_media**](MediaApi.md#list_account_media) | **GET** /accounts/{account_id}/media | Get a list of media recordings for an account
-[**replace_account_media_tts**](MediaApi.md#replace_account_media_tts) | **PUT** /accounts/{account_id}/media/{media_id} | Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
+[**replace_account_media_files**](MediaApi.md#replace_account_media_files) | **PUT** /accounts/{account_id}/media/files/{media_id} | Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
+[**replace_account_media_tts**](MediaApi.md#replace_account_media_tts) | **PUT** /accounts/{account_id}/media/tts/{media_id} | Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
 
 
 # **create_account_media_files**
@@ -302,6 +303,69 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ListMedia**](ListMedia.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **replace_account_media_files**
+> MediaFull replace_account_media_files(account_id, media_id, opts)
+
+Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
+
+See Account Media for more info on the properties.
+
+### Example
+```ruby
+# load the gem
+require 'swagger_client'
+# setup authorization
+SwaggerClient.configure do |config|
+  # Configure API key authorization: apiKey
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = SwaggerClient::MediaApi.new
+
+account_id = 56 # Integer | Account ID
+
+media_id = 56 # Integer | Media ID
+
+opts = { 
+  json: "json_example", # String | Media extra parameters
+  file: File.new("/path/to/file.txt") # File | Media file
+}
+
+begin
+  #Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
+  result = api_instance.replace_account_media_files(account_id, media_id, opts)
+  p result
+rescue SwaggerClient::ApiError => e
+  puts "Exception when calling MediaApi->replace_account_media_files: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **Integer**| Account ID | 
+ **media_id** | **Integer**| Media ID | 
+ **json** | **String**| Media extra parameters | [optional] 
+ **file** | **File**| Media file | [optional] 
+
+### Return type
+
+[**MediaFull**](MediaFull.md)
 
 ### Authorization
 

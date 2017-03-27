@@ -103,6 +103,21 @@ describe 'MediaApi' do
     end
   end
 
+  # unit tests for replace_account_media_files
+  # Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
+  # See Account Media for more info on the properties.
+  # @param account_id Account ID
+  # @param media_id Media ID
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :json Media extra parameters
+  # @option opts [File] :file Media file
+  # @return [MediaFull]
+  describe 'replace_account_media_files test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for replace_account_media_tts
   # Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
   # See Account Media for more info on the properties.

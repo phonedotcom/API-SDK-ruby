@@ -334,6 +334,69 @@ module SwaggerClient
     # @param account_id Account ID
     # @param media_id Media ID
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :json Media extra parameters
+    # @option opts [File] :file Media file
+    # @return [MediaFull]
+    def replace_account_media_files(account_id, media_id, opts = {})
+      data, _status_code, _headers = replace_account_media_files_with_http_info(account_id, media_id, opts)
+      return data
+    end
+
+    # Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
+    # See Account Media for more info on the properties.
+    # @param account_id Account ID
+    # @param media_id Media ID
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :json Media extra parameters
+    # @option opts [File] :file Media file
+    # @return [Array<(MediaFull, Fixnum, Hash)>] MediaFull data, response status code and response headers
+    def replace_account_media_files_with_http_info(account_id, media_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: MediaApi.replace_account_media_files ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling MediaApi.replace_account_media_files" if account_id.nil?
+      # verify the required parameter 'media_id' is set
+      fail ArgumentError, "Missing the required parameter 'media_id' when calling MediaApi.replace_account_media_files" if media_id.nil?
+      # resource path
+      local_var_path = "/accounts/{account_id}/media/files/{media_id}".sub('{format}','json').sub('{' + 'account_id' + '}', account_id.to_s).sub('{' + 'media_id' + '}', media_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+      form_params["json"] = opts[:'json'] if !opts[:'json'].nil?
+      form_params["file"] = opts[:'file'] if !opts[:'file'].nil?
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['apiKey']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'MediaFull')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MediaApi#replace_account_media_files\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
+    # See Account Media for more info on the properties.
+    # @param account_id Account ID
+    # @param media_id Media ID
+    # @param [Hash] opts the optional parameters
     # @option opts [CreateMediaParams] :data Media data
     # @return [MediaFull]
     def replace_account_media_tts(account_id, media_id, opts = {})
@@ -357,7 +420,7 @@ module SwaggerClient
       # verify the required parameter 'media_id' is set
       fail ArgumentError, "Missing the required parameter 'media_id' when calling MediaApi.replace_account_media_tts" if media_id.nil?
       # resource path
-      local_var_path = "/accounts/{account_id}/media/{media_id}".sub('{format}','json').sub('{' + 'account_id' + '}', account_id.to_s).sub('{' + 'media_id' + '}', media_id.to_s)
+      local_var_path = "/accounts/{account_id}/media/tts/{media_id}".sub('{format}','json').sub('{' + 'account_id' + '}', account_id.to_s).sub('{' + 'media_id' + '}', media_id.to_s)
 
       # query parameters
       query_params = {}
