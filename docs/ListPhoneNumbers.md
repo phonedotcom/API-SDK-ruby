@@ -8,6 +8,6 @@ Name | Type | Description | Notes
 **total** | **Integer** |  | [optional] 
 **offset** | **Integer** |  | [optional] 
 **limit** | **Integer** |  | [optional] 
-**items** | [**Array&lt;PhoneNumberContact&gt;**](PhoneNumberContact.md) | Array of Contact Phone Number Objects. See below for details. | [optional] 
+**items** | [**Array&lt;PhoneNumberFull&gt;**](PhoneNumberFull.md) | Array of Contact Phone Number Objects. See below for details. | [optional] 
 
 

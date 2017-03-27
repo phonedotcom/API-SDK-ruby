@@ -31,14 +31,41 @@ describe 'MediaApi' do
     end
   end
 
-  # unit tests for create_account_media
+  # unit tests for create_account_media_files
+  # Add a media object to your account that can be used as a greeting or hold music. Users may create a media by using the built-in Text-to-speech (TTS) facility or upload a file of their choice. (Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB)
+  # See Account Media for more info on the properties.
+  # @param account_id Account ID
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :json Media extra parameters
+  # @option opts [File] :file Media file
+  # @return [MediaFull]
+  describe 'create_account_media_files test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for create_account_media_tts
   # Add a media object to your account that can be used as a greeting or hold music. Users may create a media by using the built-in Text-to-speech (TTS) facility or upload a file of their choice. (Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB)
   # See Account Media for more info on the properties.
   # @param account_id Account ID
   # @param [Hash] opts the optional parameters
   # @option opts [CreateMediaParams] :data Media data
   # @return [MediaFull]
-  describe 'create_account_media test' do
+  describe 'create_account_media_tts test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for delete_account_media
+  # Delete an individual media record
+  # See Account Media for more info on the properties.
+  # @param account_id Account ID
+  # @param media_id Media ID
+  # @param [Hash] opts the optional parameters
+  # @return [DeleteMedia]
+  describe 'delete_account_media test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -48,7 +75,7 @@ describe 'MediaApi' do
   # Show details of an individual media recording (Greeting or Hold Music)
   # Get individual media recording
   # @param account_id Account ID
-  # @param recording_id Recording ID
+  # @param media_id Media ID
   # @param [Hash] opts the optional parameters
   # @return [MediaFull]
   describe 'get_account_media test' do
@@ -71,6 +98,20 @@ describe 'MediaApi' do
   # @option opts [String] :fields Field set
   # @return [ListMedia]
   describe 'list_account_media test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for replace_account_media_tts
+  # Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
+  # See Account Media for more info on the properties.
+  # @param account_id Account ID
+  # @param media_id Media ID
+  # @param [Hash] opts the optional parameters
+  # @option opts [CreateMediaParams] :data Media data
+  # @return [MediaFull]
+  describe 'replace_account_media_tts test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

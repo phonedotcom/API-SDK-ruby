@@ -23,10 +23,69 @@ module SwaggerClient
     # See Account Media for more info on the properties.
     # @param account_id Account ID
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :json Media extra parameters
+    # @option opts [File] :file Media file
+    # @return [MediaFull]
+    def create_account_media_files(account_id, opts = {})
+      data, _status_code, _headers = create_account_media_files_with_http_info(account_id, opts)
+      return data
+    end
+
+    # Add a media object to your account that can be used as a greeting or hold music. Users may create a media by using the built-in Text-to-speech (TTS) facility or upload a file of their choice. (Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB)
+    # See Account Media for more info on the properties.
+    # @param account_id Account ID
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :json Media extra parameters
+    # @option opts [File] :file Media file
+    # @return [Array<(MediaFull, Fixnum, Hash)>] MediaFull data, response status code and response headers
+    def create_account_media_files_with_http_info(account_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: MediaApi.create_account_media_files ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling MediaApi.create_account_media_files" if account_id.nil?
+      # resource path
+      local_var_path = "/accounts/{account_id}/media/files".sub('{format}','json').sub('{' + 'account_id' + '}', account_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+
+      # form parameters
+      form_params = {}
+      form_params["json"] = opts[:'json'] if !opts[:'json'].nil?
+      form_params["file"] = opts[:'file'] if !opts[:'file'].nil?
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['apiKey']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'MediaFull')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MediaApi#create_account_media_files\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Add a media object to your account that can be used as a greeting or hold music. Users may create a media by using the built-in Text-to-speech (TTS) facility or upload a file of their choice. (Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB)
+    # See Account Media for more info on the properties.
+    # @param account_id Account ID
+    # @param [Hash] opts the optional parameters
     # @option opts [CreateMediaParams] :data Media data
     # @return [MediaFull]
-    def create_account_media(account_id, opts = {})
-      data, _status_code, _headers = create_account_media_with_http_info(account_id, opts)
+    def create_account_media_tts(account_id, opts = {})
+      data, _status_code, _headers = create_account_media_tts_with_http_info(account_id, opts)
       return data
     end
 
@@ -36,14 +95,14 @@ module SwaggerClient
     # @param [Hash] opts the optional parameters
     # @option opts [CreateMediaParams] :data Media data
     # @return [Array<(MediaFull, Fixnum, Hash)>] MediaFull data, response status code and response headers
-    def create_account_media_with_http_info(account_id, opts = {})
+    def create_account_media_tts_with_http_info(account_id, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: MediaApi.create_account_media ..."
+        @api_client.config.logger.debug "Calling API: MediaApi.create_account_media_tts ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling MediaApi.create_account_media" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling MediaApi.create_account_media_tts" if account_id.nil?
       # resource path
-      local_var_path = "/accounts/{account_id}/media".sub('{format}','json').sub('{' + 'account_id' + '}', account_id.to_s)
+      local_var_path = "/accounts/{account_id}/media/tts".sub('{format}','json').sub('{' + 'account_id' + '}', account_id.to_s)
 
       # query parameters
       query_params = {}
@@ -69,7 +128,64 @@ module SwaggerClient
         :auth_names => auth_names,
         :return_type => 'MediaFull')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: MediaApi#create_account_media\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: MediaApi#create_account_media_tts\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Delete an individual media record
+    # See Account Media for more info on the properties.
+    # @param account_id Account ID
+    # @param media_id Media ID
+    # @param [Hash] opts the optional parameters
+    # @return [DeleteMedia]
+    def delete_account_media(account_id, media_id, opts = {})
+      data, _status_code, _headers = delete_account_media_with_http_info(account_id, media_id, opts)
+      return data
+    end
+
+    # Delete an individual media record
+    # See Account Media for more info on the properties.
+    # @param account_id Account ID
+    # @param media_id Media ID
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(DeleteMedia, Fixnum, Hash)>] DeleteMedia data, response status code and response headers
+    def delete_account_media_with_http_info(account_id, media_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: MediaApi.delete_account_media ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling MediaApi.delete_account_media" if account_id.nil?
+      # verify the required parameter 'media_id' is set
+      fail ArgumentError, "Missing the required parameter 'media_id' when calling MediaApi.delete_account_media" if media_id.nil?
+      # resource path
+      local_var_path = "/accounts/{account_id}/media/{media_id}".sub('{format}','json').sub('{' + 'account_id' + '}', account_id.to_s).sub('{' + 'media_id' + '}', media_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['apiKey']
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'DeleteMedia')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MediaApi#delete_account_media\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -77,30 +193,30 @@ module SwaggerClient
     # Show details of an individual media recording (Greeting or Hold Music)
     # Get individual media recording
     # @param account_id Account ID
-    # @param recording_id Recording ID
+    # @param media_id Media ID
     # @param [Hash] opts the optional parameters
     # @return [MediaFull]
-    def get_account_media(account_id, recording_id, opts = {})
-      data, _status_code, _headers = get_account_media_with_http_info(account_id, recording_id, opts)
+    def get_account_media(account_id, media_id, opts = {})
+      data, _status_code, _headers = get_account_media_with_http_info(account_id, media_id, opts)
       return data
     end
 
     # Show details of an individual media recording (Greeting or Hold Music)
     # Get individual media recording
     # @param account_id Account ID
-    # @param recording_id Recording ID
+    # @param media_id Media ID
     # @param [Hash] opts the optional parameters
     # @return [Array<(MediaFull, Fixnum, Hash)>] MediaFull data, response status code and response headers
-    def get_account_media_with_http_info(account_id, recording_id, opts = {})
+    def get_account_media_with_http_info(account_id, media_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: MediaApi.get_account_media ..."
       end
       # verify the required parameter 'account_id' is set
       fail ArgumentError, "Missing the required parameter 'account_id' when calling MediaApi.get_account_media" if account_id.nil?
-      # verify the required parameter 'recording_id' is set
-      fail ArgumentError, "Missing the required parameter 'recording_id' when calling MediaApi.get_account_media" if recording_id.nil?
+      # verify the required parameter 'media_id' is set
+      fail ArgumentError, "Missing the required parameter 'media_id' when calling MediaApi.get_account_media" if media_id.nil?
       # resource path
-      local_var_path = "/accounts/{account_id}/media/{recording_id}".sub('{format}','json').sub('{' + 'account_id' + '}', account_id.to_s).sub('{' + 'recording_id' + '}', recording_id.to_s)
+      local_var_path = "/accounts/{account_id}/media/{media_id}".sub('{format}','json').sub('{' + 'account_id' + '}', account_id.to_s).sub('{' + 'media_id' + '}', media_id.to_s)
 
       # query parameters
       query_params = {}
@@ -209,6 +325,65 @@ module SwaggerClient
         :return_type => 'ListMedia')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: MediaApi#list_account_media\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
+    # See Account Media for more info on the properties.
+    # @param account_id Account ID
+    # @param media_id Media ID
+    # @param [Hash] opts the optional parameters
+    # @option opts [CreateMediaParams] :data Media data
+    # @return [MediaFull]
+    def replace_account_media_tts(account_id, media_id, opts = {})
+      data, _status_code, _headers = replace_account_media_tts_with_http_info(account_id, media_id, opts)
+      return data
+    end
+
+    # Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
+    # See Account Media for more info on the properties.
+    # @param account_id Account ID
+    # @param media_id Media ID
+    # @param [Hash] opts the optional parameters
+    # @option opts [CreateMediaParams] :data Media data
+    # @return [Array<(MediaFull, Fixnum, Hash)>] MediaFull data, response status code and response headers
+    def replace_account_media_tts_with_http_info(account_id, media_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: MediaApi.replace_account_media_tts ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling MediaApi.replace_account_media_tts" if account_id.nil?
+      # verify the required parameter 'media_id' is set
+      fail ArgumentError, "Missing the required parameter 'media_id' when calling MediaApi.replace_account_media_tts" if media_id.nil?
+      # resource path
+      local_var_path = "/accounts/{account_id}/media/{media_id}".sub('{format}','json').sub('{' + 'account_id' + '}', account_id.to_s).sub('{' + 'media_id' + '}', media_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(opts[:'data'])
+      auth_names = ['apiKey']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'MediaFull')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MediaApi#replace_account_media_tts\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

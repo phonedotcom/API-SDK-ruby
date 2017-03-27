@@ -13,42 +13,21 @@ require 'date'
 
 module SwaggerClient
 
-  class ListPhoneNumbers
-    attr_accessor :filters
-
-    attr_accessor :sort
-
-    attr_accessor :total
-
-    attr_accessor :offset
-
-    attr_accessor :limit
-
-    # Array of Contact Phone Number Objects. See below for details.
-    attr_accessor :items
+  class DeleteMedia
+    attr_accessor :success
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'filters' => :'filters',
-        :'sort' => :'sort',
-        :'total' => :'total',
-        :'offset' => :'offset',
-        :'limit' => :'limit',
-        :'items' => :'items'
+        :'success' => :'success'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'filters' => :'FilterIdNamePhoneNumberArray',
-        :'sort' => :'SortIdNamePhoneNumber',
-        :'total' => :'Integer',
-        :'offset' => :'Integer',
-        :'limit' => :'Integer',
-        :'items' => :'Array<PhoneNumberFull>'
+        :'success' => :'BOOLEAN'
       }
     end
 
@@ -60,30 +39,8 @@ module SwaggerClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'filters')
-        self.filters = attributes[:'filters']
-      end
-
-      if attributes.has_key?(:'sort')
-        self.sort = attributes[:'sort']
-      end
-
-      if attributes.has_key?(:'total')
-        self.total = attributes[:'total']
-      end
-
-      if attributes.has_key?(:'offset')
-        self.offset = attributes[:'offset']
-      end
-
-      if attributes.has_key?(:'limit')
-        self.limit = attributes[:'limit']
-      end
-
-      if attributes.has_key?(:'items')
-        if (value = attributes[:'items']).is_a?(Array)
-          self.items = value
-        end
+      if attributes.has_key?(:'success')
+        self.success = attributes[:'success']
       end
 
     end
@@ -106,12 +63,7 @@ module SwaggerClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          filters == o.filters &&
-          sort == o.sort &&
-          total == o.total &&
-          offset == o.offset &&
-          limit == o.limit &&
-          items == o.items
+          success == o.success
     end
 
     # @see the `==` method
@@ -123,7 +75,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [filters, sort, total, offset, limit, items].hash
+      [success].hash
     end
 
     # Builds the object from hash

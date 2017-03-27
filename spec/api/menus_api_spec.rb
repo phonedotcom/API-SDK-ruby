@@ -46,7 +46,7 @@ describe 'MenusApi' do
 
   # unit tests for delete_account_menu
   # Delete an individual menu
-  # This service shows the details of an individual menu.
+  # See Account Menus for more info on the properties.
   # @param account_id Account ID
   # @param menu_id Menu ID
   # @param [Hash] opts the optional parameters
@@ -91,7 +91,7 @@ describe 'MenusApi' do
 
   # unit tests for replace_account_menu
   # Replace an individual menu
-  # This service replaces the details of an individual Menu.
+  # See Account Menus for more info on the properties.
   # @param account_id Account ID
   # @param menu_id Menu ID
   # @param [Hash] opts the optional parameters

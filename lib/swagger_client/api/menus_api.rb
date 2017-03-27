@@ -75,7 +75,7 @@ module SwaggerClient
     end
 
     # Delete an individual menu
-    # This service shows the details of an individual menu.
+    # See Account Menus for more info on the properties.
     # @param account_id Account ID
     # @param menu_id Menu ID
     # @param [Hash] opts the optional parameters
@@ -86,7 +86,7 @@ module SwaggerClient
     end
 
     # Delete an individual menu
-    # This service shows the details of an individual menu.
+    # See Account Menus for more info on the properties.
     # @param account_id Account ID
     # @param menu_id Menu ID
     # @param [Hash] opts the optional parameters
@@ -271,7 +271,7 @@ module SwaggerClient
     end
 
     # Replace an individual menu
-    # This service replaces the details of an individual Menu.
+    # See Account Menus for more info on the properties.
     # @param account_id Account ID
     # @param menu_id Menu ID
     # @param [Hash] opts the optional parameters
@@ -283,7 +283,7 @@ module SwaggerClient
     end
 
     # Replace an individual menu
-    # This service replaces the details of an individual Menu.
+    # See Account Menus for more info on the properties.
     # @param account_id Account ID
     # @param menu_id Menu ID
     # @param [Hash] opts the optional parameters
