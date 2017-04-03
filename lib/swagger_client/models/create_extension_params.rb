@@ -14,6 +14,12 @@ require 'date'
 module SwaggerClient
 
   class CreateExtensionParams
+    # Voicemail object
+    attr_accessor :voicemail
+
+    # Call Notifications object
+    attr_accessor :call_notifications
+
     # Caller ID
     attr_accessor :caller_id
 
@@ -41,17 +47,8 @@ module SwaggerClient
     # Recording lookup object
     attr_accessor :name_greeting
 
-    # Recording lookup object
-    attr_accessor :voicemail_greeting_alternate
-
     # Local area code
     attr_accessor :local_area_code
-
-    # Enable the \"leave a message\" prompt for voicemail
-    attr_accessor :voicemail_greeting_enable_leave_message_prompt
-
-    # Voicemail enabled
-    attr_accessor :voicemail_enabled
 
     # Enable outgoing calls
     attr_accessor :enable_outbound_calls
@@ -59,34 +56,12 @@ module SwaggerClient
     # Enable Call Waiting
     attr_accessor :enable_call_waiting
 
-    # Voicemail password
-    attr_accessor :voicemail_password
-
-    # Voicemail greeting type
-    attr_accessor :voicemail_greeting_type
-
-    # Recording lookup object
-    attr_accessor :voicemail_greeting_standard
-
-    # Voicemail transcription type
-    attr_accessor :voicemail_transcription
-
-    # Email notifications for voicemails. Can be a single email or an array of emails
-    attr_accessor :voicemail_notifications_emails
-
-    # SMS notifications for voicemails
-    attr_accessor :voicemail_notifications_sms
-
-    # Email notifications for calls. Can be a single email or an array of emails
-    attr_accessor :call_notifications_emails
-
-    # SMS notifications for calls
-    attr_accessor :call_notifications_sms
-
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'voicemail' => :'voicemail',
+        :'call_notifications' => :'call_notifications',
         :'caller_id' => :'caller_id',
         :'usage_type' => :'usage_type',
         :'allows_call_waiting' => :'allows_call_waiting',
@@ -96,26 +71,17 @@ module SwaggerClient
         :'full_name' => :'full_name',
         :'timezone' => :'timezone',
         :'name_greeting' => :'name_greeting',
-        :'voicemail_greeting_alternate' => :'voicemail[greeting][alternate]',
         :'local_area_code' => :'local_area_code',
-        :'voicemail_greeting_enable_leave_message_prompt' => :'voicemail[greeting][enable_leave_message_prompt]',
-        :'voicemail_enabled' => :'voicemail[enabled]',
         :'enable_outbound_calls' => :'enable_outbound_calls',
-        :'enable_call_waiting' => :'enable_call_waiting',
-        :'voicemail_password' => :'voicemail[password]',
-        :'voicemail_greeting_type' => :'voicemail[greeting][type]',
-        :'voicemail_greeting_standard' => :'voicemail[greeting][standard]',
-        :'voicemail_transcription' => :'voicemail[transcription]',
-        :'voicemail_notifications_emails' => :'voicemail[notifications][emails]',
-        :'voicemail_notifications_sms' => :'voicemail[notifications][sms]',
-        :'call_notifications_emails' => :'call_notifications[emails]',
-        :'call_notifications_sms' => :'call_notifications[sms]'
+        :'enable_call_waiting' => :'enable_call_waiting'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'voicemail' => :'Voicemail',
+        :'call_notifications' => :'CallNotifications',
         :'caller_id' => :'String',
         :'usage_type' => :'String',
         :'allows_call_waiting' => :'BOOLEAN',
@@ -125,20 +91,9 @@ module SwaggerClient
         :'full_name' => :'String',
         :'timezone' => :'String',
         :'name_greeting' => :'Object',
-        :'voicemail_greeting_alternate' => :'Object',
         :'local_area_code' => :'Integer',
-        :'voicemail_greeting_enable_leave_message_prompt' => :'BOOLEAN',
-        :'voicemail_enabled' => :'BOOLEAN',
         :'enable_outbound_calls' => :'BOOLEAN',
-        :'enable_call_waiting' => :'BOOLEAN',
-        :'voicemail_password' => :'Integer',
-        :'voicemail_greeting_type' => :'String',
-        :'voicemail_greeting_standard' => :'Object',
-        :'voicemail_transcription' => :'String',
-        :'voicemail_notifications_emails' => :'Array<String>',
-        :'voicemail_notifications_sms' => :'String',
-        :'call_notifications_emails' => :'Array<String>',
-        :'call_notifications_sms' => :'String'
+        :'enable_call_waiting' => :'BOOLEAN'
       }
     end
 
@@ -149,6 +104,14 @@ module SwaggerClient
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
+
+      if attributes.has_key?(:'voicemail')
+        self.voicemail = attributes[:'voicemail']
+      end
+
+      if attributes.has_key?(:'call_notifications')
+        self.call_notifications = attributes[:'call_notifications']
+      end
 
       if attributes.has_key?(:'caller_id')
         self.caller_id = attributes[:'caller_id']
@@ -186,20 +149,8 @@ module SwaggerClient
         self.name_greeting = attributes[:'name_greeting']
       end
 
-      if attributes.has_key?(:'voicemail[greeting][alternate]')
-        self.voicemail_greeting_alternate = attributes[:'voicemail[greeting][alternate]']
-      end
-
       if attributes.has_key?(:'local_area_code')
         self.local_area_code = attributes[:'local_area_code']
-      end
-
-      if attributes.has_key?(:'voicemail[greeting][enable_leave_message_prompt]')
-        self.voicemail_greeting_enable_leave_message_prompt = attributes[:'voicemail[greeting][enable_leave_message_prompt]']
-      end
-
-      if attributes.has_key?(:'voicemail[enabled]')
-        self.voicemail_enabled = attributes[:'voicemail[enabled]']
       end
 
       if attributes.has_key?(:'enable_outbound_calls')
@@ -208,42 +159,6 @@ module SwaggerClient
 
       if attributes.has_key?(:'enable_call_waiting')
         self.enable_call_waiting = attributes[:'enable_call_waiting']
-      end
-
-      if attributes.has_key?(:'voicemail[password]')
-        self.voicemail_password = attributes[:'voicemail[password]']
-      end
-
-      if attributes.has_key?(:'voicemail[greeting][type]')
-        self.voicemail_greeting_type = attributes[:'voicemail[greeting][type]']
-      end
-
-      if attributes.has_key?(:'voicemail[greeting][standard]')
-        self.voicemail_greeting_standard = attributes[:'voicemail[greeting][standard]']
-      end
-
-      if attributes.has_key?(:'voicemail[transcription]')
-        self.voicemail_transcription = attributes[:'voicemail[transcription]']
-      end
-
-      if attributes.has_key?(:'voicemail[notifications][emails]')
-        if (value = attributes[:'voicemail[notifications][emails]']).is_a?(Array)
-          self.voicemail_notifications_emails = value
-        end
-      end
-
-      if attributes.has_key?(:'voicemail[notifications][sms]')
-        self.voicemail_notifications_sms = attributes[:'voicemail[notifications][sms]']
-      end
-
-      if attributes.has_key?(:'call_notifications[emails]')
-        if (value = attributes[:'call_notifications[emails]']).is_a?(Array)
-          self.call_notifications_emails = value
-        end
-      end
-
-      if attributes.has_key?(:'call_notifications[sms]')
-        self.call_notifications_sms = attributes[:'call_notifications[sms]']
       end
 
     end
@@ -266,6 +181,8 @@ module SwaggerClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          voicemail == o.voicemail &&
+          call_notifications == o.call_notifications &&
           caller_id == o.caller_id &&
           usage_type == o.usage_type &&
           allows_call_waiting == o.allows_call_waiting &&
@@ -275,20 +192,9 @@ module SwaggerClient
           full_name == o.full_name &&
           timezone == o.timezone &&
           name_greeting == o.name_greeting &&
-          voicemail_greeting_alternate == o.voicemail_greeting_alternate &&
           local_area_code == o.local_area_code &&
-          voicemail_greeting_enable_leave_message_prompt == o.voicemail_greeting_enable_leave_message_prompt &&
-          voicemail_enabled == o.voicemail_enabled &&
           enable_outbound_calls == o.enable_outbound_calls &&
-          enable_call_waiting == o.enable_call_waiting &&
-          voicemail_password == o.voicemail_password &&
-          voicemail_greeting_type == o.voicemail_greeting_type &&
-          voicemail_greeting_standard == o.voicemail_greeting_standard &&
-          voicemail_transcription == o.voicemail_transcription &&
-          voicemail_notifications_emails == o.voicemail_notifications_emails &&
-          voicemail_notifications_sms == o.voicemail_notifications_sms &&
-          call_notifications_emails == o.call_notifications_emails &&
-          call_notifications_sms == o.call_notifications_sms
+          enable_call_waiting == o.enable_call_waiting
     end
 
     # @see the `==` method
@@ -300,7 +206,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [caller_id, usage_type, allows_call_waiting, extension, include_in_directory, name, full_name, timezone, name_greeting, voicemail_greeting_alternate, local_area_code, voicemail_greeting_enable_leave_message_prompt, voicemail_enabled, enable_outbound_calls, enable_call_waiting, voicemail_password, voicemail_greeting_type, voicemail_greeting_standard, voicemail_transcription, voicemail_notifications_emails, voicemail_notifications_sms, call_notifications_emails, call_notifications_sms].hash
+      [voicemail, call_notifications, caller_id, usage_type, allows_call_waiting, extension, include_in_directory, name, full_name, timezone, name_greeting, local_area_code, enable_outbound_calls, enable_call_waiting].hash
     end
 
     # Builds the object from hash

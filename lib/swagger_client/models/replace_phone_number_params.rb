@@ -26,29 +26,17 @@ module SwaggerClient
     # Block anonymous calls
     attr_accessor :block_anonymous
 
-    # Caller ID name
-    attr_accessor :caller_id_name
+    # Caller ID object
+    attr_accessor :caller_id
 
-    # Caller ID type
-    attr_accessor :caller_id_type
-
-    # 'application' or 'extension'
-    attr_accessor :sms_forwarding_type
-
-    # Application lookup object
-    attr_accessor :sms_forwarding_application
-
-    # Extension lookup object
-    attr_accessor :sms_forwarding_extension
+    # SMS Forwarding Object, or NULL
+    attr_accessor :sms_forwarding
 
     # Pool lookup object
     attr_accessor :pool_item
 
-    # Call notifications for emails. Can be a single email or an array of emails
-    attr_accessor :call_notifications_emails
-
-    # Call notification for SMS
-    attr_accessor :call_notifications_sms
+    # Call Notifications object
+    attr_accessor :call_notifications
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -58,14 +46,10 @@ module SwaggerClient
         :'name' => :'name',
         :'block_incoming' => :'block_incoming',
         :'block_anonymous' => :'block_anonymous',
-        :'caller_id_name' => :'caller_id[name]',
-        :'caller_id_type' => :'caller_id[type]',
-        :'sms_forwarding_type' => :'sms_forwarding[type]',
-        :'sms_forwarding_application' => :'sms_forwarding[application]',
-        :'sms_forwarding_extension' => :'sms_forwarding[extension]',
+        :'caller_id' => :'caller_id',
+        :'sms_forwarding' => :'sms_forwarding',
         :'pool_item' => :'pool_item',
-        :'call_notifications_emails' => :'call_notifications[emails]',
-        :'call_notifications_sms' => :'call_notifications[sms]'
+        :'call_notifications' => :'call_notifications'
       }
     end
 
@@ -76,14 +60,10 @@ module SwaggerClient
         :'name' => :'String',
         :'block_incoming' => :'BOOLEAN',
         :'block_anonymous' => :'BOOLEAN',
-        :'caller_id_name' => :'String',
-        :'caller_id_type' => :'String',
-        :'sms_forwarding_type' => :'String',
-        :'sms_forwarding_application' => :'Object',
-        :'sms_forwarding_extension' => :'Object',
+        :'caller_id' => :'CallerIdPhoneNumber',
+        :'sms_forwarding' => :'SmsForwardingParams',
         :'pool_item' => :'Object',
-        :'call_notifications_emails' => :'Array<String>',
-        :'call_notifications_sms' => :'String'
+        :'call_notifications' => :'CallNotifications'
       }
     end
 
@@ -111,38 +91,20 @@ module SwaggerClient
         self.block_anonymous = attributes[:'block_anonymous']
       end
 
-      if attributes.has_key?(:'caller_id[name]')
-        self.caller_id_name = attributes[:'caller_id[name]']
+      if attributes.has_key?(:'caller_id')
+        self.caller_id = attributes[:'caller_id']
       end
 
-      if attributes.has_key?(:'caller_id[type]')
-        self.caller_id_type = attributes[:'caller_id[type]']
-      end
-
-      if attributes.has_key?(:'sms_forwarding[type]')
-        self.sms_forwarding_type = attributes[:'sms_forwarding[type]']
-      end
-
-      if attributes.has_key?(:'sms_forwarding[application]')
-        self.sms_forwarding_application = attributes[:'sms_forwarding[application]']
-      end
-
-      if attributes.has_key?(:'sms_forwarding[extension]')
-        self.sms_forwarding_extension = attributes[:'sms_forwarding[extension]']
+      if attributes.has_key?(:'sms_forwarding')
+        self.sms_forwarding = attributes[:'sms_forwarding']
       end
 
       if attributes.has_key?(:'pool_item')
         self.pool_item = attributes[:'pool_item']
       end
 
-      if attributes.has_key?(:'call_notifications[emails]')
-        if (value = attributes[:'call_notifications[emails]']).is_a?(Array)
-          self.call_notifications_emails = value
-        end
-      end
-
-      if attributes.has_key?(:'call_notifications[sms]')
-        self.call_notifications_sms = attributes[:'call_notifications[sms]']
+      if attributes.has_key?(:'call_notifications')
+        self.call_notifications = attributes[:'call_notifications']
       end
 
     end
@@ -169,14 +131,10 @@ module SwaggerClient
           name == o.name &&
           block_incoming == o.block_incoming &&
           block_anonymous == o.block_anonymous &&
-          caller_id_name == o.caller_id_name &&
-          caller_id_type == o.caller_id_type &&
-          sms_forwarding_type == o.sms_forwarding_type &&
-          sms_forwarding_application == o.sms_forwarding_application &&
-          sms_forwarding_extension == o.sms_forwarding_extension &&
+          caller_id == o.caller_id &&
+          sms_forwarding == o.sms_forwarding &&
           pool_item == o.pool_item &&
-          call_notifications_emails == o.call_notifications_emails &&
-          call_notifications_sms == o.call_notifications_sms
+          call_notifications == o.call_notifications
     end
 
     # @see the `==` method
@@ -188,7 +146,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [route, name, block_incoming, block_anonymous, caller_id_name, caller_id_type, sms_forwarding_type, sms_forwarding_application, sms_forwarding_extension, pool_item, call_notifications_emails, call_notifications_sms].hash
+      [route, name, block_incoming, block_anonymous, caller_id, sms_forwarding, pool_item, call_notifications].hash
     end
 
     # Builds the object from hash

@@ -59,8 +59,8 @@ module SwaggerClient
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if !@type.nil? && @type !~ Regexp.new(/extension|application/)
-        invalid_properties.push("invalid value for 'type', must conform to the pattern /extension|application/.")
+      if !@type.nil? && @type !~ Regexp.new(/business|personal/)
+        invalid_properties.push("invalid value for 'type', must conform to the pattern /business|personal/.")
       end
 
       return invalid_properties
@@ -69,7 +69,7 @@ module SwaggerClient
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if !@type.nil? && @type !~ Regexp.new(/extension|application/)
+      return false if !@type.nil? && @type !~ Regexp.new(/business|personal/)
       return true
     end
 
@@ -77,8 +77,8 @@ module SwaggerClient
     # @param [Object] type Value to be assigned
     def type=(type)
 
-      if !type.nil? && type !~ Regexp.new(/extension|application/)
-        fail ArgumentError, "invalid value for 'type', must conform to the pattern /extension|application/."
+      if !type.nil? && type !~ Regexp.new(/business|personal/)
+        fail ArgumentError, "invalid value for 'type', must conform to the pattern /business|personal/."
       end
 
       @type = type

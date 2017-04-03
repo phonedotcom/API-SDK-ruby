@@ -262,6 +262,7 @@ Class | Method | HTTP request | Description
  - [SwaggerClient::ScheduleSummary](docs/ScheduleSummary.md)
  - [SwaggerClient::SipAuthentication](docs/SipAuthentication.md)
  - [SwaggerClient::SmsForwarding](docs/SmsForwarding.md)
+ - [SwaggerClient::SmsForwardingParams](docs/SmsForwardingParams.md)
  - [SwaggerClient::SmsFull](docs/SmsFull.md)
  - [SwaggerClient::SortCallLogs](docs/SortCallLogs.md)
  - [SwaggerClient::SortId](docs/SortId.md)
