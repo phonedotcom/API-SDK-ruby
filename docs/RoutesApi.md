@@ -4,19 +4,19 @@ All URIs are relative to *https://api.phone.com/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_route**](RoutesApi.md#create_route) | **POST** /accounts/{account_id}/routes | Add a new address book contact for an extension
-[**delete_account_route**](RoutesApi.md#delete_account_route) | **DELETE** /accounts/{account_id}/routes/{route_id} | 
-[**get_account_route**](RoutesApi.md#get_account_route) | **GET** /accounts/{account_id}/routes/{route_id} | Show details of an individual route
-[**list_account_routes**](RoutesApi.md#list_account_routes) | **GET** /accounts/{account_id}/routes | Get a list of routes for an account
-[**replace_account_route**](RoutesApi.md#replace_account_route) | **PUT** /accounts/{account_id}/routes/{route_id} | 
+[**create_route**](RoutesApi.md#create_route) | **POST** /accounts/{account_id}/routes | Add a new route to the account.
+[**delete_account_route**](RoutesApi.md#delete_account_route) | **DELETE** /accounts/{account_id}/routes/{route_id} | Delete a route from the account.
+[**get_account_route**](RoutesApi.md#get_account_route) | **GET** /accounts/{account_id}/routes/{route_id} | Show details of an individual route.
+[**list_account_routes**](RoutesApi.md#list_account_routes) | **GET** /accounts/{account_id}/routes | Get a list of routes for an account.
+[**replace_account_route**](RoutesApi.md#replace_account_route) | **PUT** /accounts/{account_id}/routes/{route_id} | Update the information of a route.
 
 
 # **create_route**
 > RouteFull create_route(account_id, , opts)
 
-Add a new address book contact for an extension
+Add a new route to the account.
 
-For more on the input fields, see Intro to Routes.
+Add a new route to the account. See Intro to Routes for more info on the properties.
 
 ### Example
 ```ruby
@@ -39,7 +39,7 @@ opts = {
 }
 
 begin
-  #Add a new address book contact for an extension
+  #Add a new route to the account.
   result = api_instance.create_route(account_id, , opts)
   p result
 rescue SwaggerClient::ApiError => e
@@ -70,11 +70,11 @@ Name | Type | Description  | Notes
 
 
 # **delete_account_route**
-> DeleteRoute delete_account_route(account_id, route_id)
+> DeleteEntry delete_account_route(account_id, route_id)
 
+Delete a route from the account.
 
-
-
+Delete a route from the account. See Intro to Routes for more info on the properties.
 
 ### Example
 ```ruby
@@ -96,7 +96,7 @@ route_id = 56 # Integer | Route ID
 
 
 begin
-  #
+  #Delete a route from the account.
   result = api_instance.delete_account_route(account_id, route_id)
   p result
 rescue SwaggerClient::ApiError => e
@@ -113,7 +113,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeleteRoute**](DeleteRoute.md)
+[**DeleteEntry**](DeleteEntry.md)
 
 ### Authorization
 
@@ -129,9 +129,9 @@ Name | Type | Description  | Notes
 # **get_account_route**
 > RouteFull get_account_route(account_id, route_id)
 
-Show details of an individual route
+Show details of an individual route.
 
-This service shows the details of an individual route.
+Show details of an individual route. See Intro to Routes for more info on the properties.
 
 ### Example
 ```ruby
@@ -153,7 +153,7 @@ route_id = 56 # Integer | Route ID
 
 
 begin
-  #Show details of an individual route
+  #Show details of an individual route.
   result = api_instance.get_account_route(account_id, route_id)
   p result
 rescue SwaggerClient::ApiError => e
@@ -186,9 +186,9 @@ Name | Type | Description  | Notes
 # **list_account_routes**
 > ListRoutes list_account_routes(account_id, , opts)
 
-Get a list of routes for an account
+Get a list of routes for an account.
 
-See Intro to Routes for more info on the properties.
+Get a list of routes for an account. See Intro to Routes for more info on the properties.
 
 ### Example
 ```ruby
@@ -217,7 +217,7 @@ opts = {
 }
 
 begin
-  #Get a list of routes for an account
+  #Get a list of routes for an account.
   result = api_instance.list_account_routes(account_id, , opts)
   p result
 rescue SwaggerClient::ApiError => e
@@ -256,9 +256,9 @@ Name | Type | Description  | Notes
 # **replace_account_route**
 > RouteFull replace_account_route(account_id, route_id, opts)
 
+Update the information of a route.
 
-
-For more on the input fields, see Intro to Routes.
+Update the information of a route. See Intro to Routes for more info on the properties.
 
 ### Example
 ```ruby
@@ -283,7 +283,7 @@ opts = {
 }
 
 begin
-  #
+  #Update the information of a route.
   result = api_instance.replace_account_route(account_id, route_id, opts)
   p result
 rescue SwaggerClient::ApiError => e

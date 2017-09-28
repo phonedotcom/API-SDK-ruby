@@ -4,18 +4,19 @@ All URIs are relative to *https://api.phone.com/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_account_device**](DevicesApi.md#create_account_device) | **POST** /accounts/{account_id}/devices | Register a generic VoIP device
-[**get_account_device**](DevicesApi.md#get_account_device) | **GET** /accounts/{account_id}/devices/{device_id} | Show details of an individual VoIP device
-[**list_account_devices**](DevicesApi.md#list_account_devices) | **GET** /accounts/{account_id}/devices | Get a list of VoIP devices associated with your account
-[**replace_account_device**](DevicesApi.md#replace_account_device) | **PUT** /accounts/{account_id}/devices/{device_id} | Update the settings for an individual VoIP device
+[**create_account_device**](DevicesApi.md#create_account_device) | **POST** /accounts/{account_id}/devices | Register a generic VoIP device.
+[**delete_account_device**](DevicesApi.md#delete_account_device) | **DELETE** /accounts/{account_id}/devices/{device_id} | Delete a VoIP device.
+[**get_account_device**](DevicesApi.md#get_account_device) | **GET** /accounts/{account_id}/devices/{device_id} | Show details of an individual VoIP device.
+[**list_account_devices**](DevicesApi.md#list_account_devices) | **GET** /accounts/{account_id}/devices | Get a list of VoIP devices associated with your account.
+[**replace_account_device**](DevicesApi.md#replace_account_device) | **PUT** /accounts/{account_id}/devices/{device_id} | Update the details of an individual VoIP device.
 
 
 # **create_account_device**
 > DeviceFull create_account_device(account_id, , opts)
 
-Register a generic VoIP device
+Register a generic VoIP device.
 
-
+Register a generic VoIP device. See Devices for more detail.
 
 ### Example
 ```ruby
@@ -38,7 +39,7 @@ opts = {
 }
 
 begin
-  #Register a generic VoIP device
+  #Register a generic VoIP device.
   result = api_instance.create_account_device(account_id, , opts)
   p result
 rescue SwaggerClient::ApiError => e
@@ -68,12 +69,12 @@ Name | Type | Description  | Notes
 
 
 
-# **get_account_device**
-> DeviceFull get_account_device(account_id, device_id)
+# **delete_account_device**
+> DeleteEntry delete_account_device(account_id, device_id)
 
-Show details of an individual VoIP device
+Delete a VoIP device.
 
-
+Delete a VoIP device. See Devices for more detail.
 
 ### Example
 ```ruby
@@ -95,7 +96,64 @@ device_id = 56 # Integer | Device ID
 
 
 begin
-  #Show details of an individual VoIP device
+  #Delete a VoIP device.
+  result = api_instance.delete_account_device(account_id, device_id)
+  p result
+rescue SwaggerClient::ApiError => e
+  puts "Exception when calling DevicesApi->delete_account_device: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **Integer**| Account ID | 
+ **device_id** | **Integer**| Device ID | 
+
+### Return type
+
+[**DeleteEntry**](DeleteEntry.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **get_account_device**
+> DeviceFull get_account_device(account_id, device_id)
+
+Show details of an individual VoIP device.
+
+Show details of an individual VoIP device. See Devices for more detail.
+
+### Example
+```ruby
+# load the gem
+require 'swagger_client'
+# setup authorization
+SwaggerClient.configure do |config|
+  # Configure API key authorization: apiKey
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = SwaggerClient::DevicesApi.new
+
+account_id = 56 # Integer | Account ID
+
+device_id = 56 # Integer | Device ID
+
+
+begin
+  #Show details of an individual VoIP device.
   result = api_instance.get_account_device(account_id, device_id)
   p result
 rescue SwaggerClient::ApiError => e
@@ -128,9 +186,9 @@ Name | Type | Description  | Notes
 # **list_account_devices**
 > ListDevices list_account_devices(account_id, , opts)
 
-Get a list of VoIP devices associated with your account
+Get a list of VoIP devices associated with your account.
 
-
+Get a list of VoIP devices associated with your account. See Devices for more detail.
 
 ### Example
 ```ruby
@@ -159,7 +217,7 @@ opts = {
 }
 
 begin
-  #Get a list of VoIP devices associated with your account
+  #Get a list of VoIP devices associated with your account.
   result = api_instance.list_account_devices(account_id, , opts)
   p result
 rescue SwaggerClient::ApiError => e
@@ -198,9 +256,9 @@ Name | Type | Description  | Notes
 # **replace_account_device**
 > DeviceFull replace_account_device(account_id, device_id, opts)
 
-Update the settings for an individual VoIP device
+Update the details of an individual VoIP device.
 
-
+Update the details of an individual VoIP device. See Devices for more detail.
 
 ### Example
 ```ruby
@@ -225,7 +283,7 @@ opts = {
 }
 
 begin
-  #Update the settings for an individual VoIP device
+  #Update the details of an individual VoIP device.
   result = api_instance.replace_account_device(account_id, device_id, opts)
   p result
 rescue SwaggerClient::ApiError => e

@@ -4,18 +4,18 @@ All URIs are relative to *https://api.phone.com/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_account_phone_number**](PhonenumbersApi.md#create_account_phone_number) | **POST** /accounts/{account_id}/phone-numbers | Add a phone number to an account
-[**get_account_phone_number**](PhonenumbersApi.md#get_account_phone_number) | **GET** /accounts/{account_id}/phone-numbers/{number_id} | Show details of an individual phone number
-[**list_account_phone_numbers**](PhonenumbersApi.md#list_account_phone_numbers) | **GET** /accounts/{account_id}/phone-numbers | Get a list of phone numbers registered to an account
-[**replace_account_phone_number**](PhonenumbersApi.md#replace_account_phone_number) | **PUT** /accounts/{account_id}/phone-numbers/{number_id} | Update the settings for an existing phone number on your account
+[**create_account_phone_number**](PhonenumbersApi.md#create_account_phone_number) | **POST** /accounts/{account_id}/phone-numbers | Add a phone number to an account.
+[**get_account_phone_number**](PhonenumbersApi.md#get_account_phone_number) | **GET** /accounts/{account_id}/phone-numbers/{number_id} | Show details of an individual phone number.
+[**list_account_phone_numbers**](PhonenumbersApi.md#list_account_phone_numbers) | **GET** /accounts/{account_id}/phone-numbers | Get a list of phone numbers registered to an account.
+[**replace_account_phone_number**](PhonenumbersApi.md#replace_account_phone_number) | **PUT** /accounts/{account_id}/phone-numbers/{number_id} | Update the settings for an existing phone number on your account.
 
 
 # **create_account_phone_number**
 > PhoneNumberFull create_account_phone_number(account_id, , opts)
 
-Add a phone number to an account
+Add a phone number to an account.
 
-See Intro to Account Phone Numbers for more info on the properties to use.
+Add a phone number to an account. See Account Phone Numbers for more info on the properties.
 
 ### Example
 ```ruby
@@ -38,7 +38,7 @@ opts = {
 }
 
 begin
-  #Add a phone number to an account
+  #Add a phone number to an account.
   result = api_instance.create_account_phone_number(account_id, , opts)
   p result
 rescue SwaggerClient::ApiError => e
@@ -71,9 +71,9 @@ Name | Type | Description  | Notes
 # **get_account_phone_number**
 > PhoneNumberFull get_account_phone_number(account_id, number_id)
 
-Show details of an individual phone number
+Show details of an individual phone number.
 
-See Intro to Account Phone Numbers for more info on the properties.
+Show details of an individual phone number. See Account Phone Numbers for more info on the properties.
 
 ### Example
 ```ruby
@@ -95,7 +95,7 @@ number_id = 56 # Integer | Number ID
 
 
 begin
-  #Show details of an individual phone number
+  #Show details of an individual phone number.
   result = api_instance.get_account_phone_number(account_id, number_id)
   p result
 rescue SwaggerClient::ApiError => e
@@ -128,9 +128,9 @@ Name | Type | Description  | Notes
 # **list_account_phone_numbers**
 > ListPhoneNumbers list_account_phone_numbers(account_id, , opts)
 
-Get a list of phone numbers registered to an account
+Get a list of phone numbers registered to an account.
 
-See Intro to Account Phone Numbers for more info on the properties.
+Get a list of phone numbers registered to an account. See Account Phone Numbers for more info on the properties.
 
 ### Example
 ```ruby
@@ -161,7 +161,7 @@ opts = {
 }
 
 begin
-  #Get a list of phone numbers registered to an account
+  #Get a list of phone numbers registered to an account.
   result = api_instance.list_account_phone_numbers(account_id, , opts)
   p result
 rescue SwaggerClient::ApiError => e
@@ -202,9 +202,9 @@ Name | Type | Description  | Notes
 # **replace_account_phone_number**
 > PhoneNumberFull replace_account_phone_number(account_id, number_id, opts)
 
-Update the settings for an existing phone number on your account
+Update the settings for an existing phone number on your account.
 
-See Intro to Account Phone Numbers for more info on the properties.
+Update the settings for an existing phone number on your account. See Account Phone Numbers for more info on the properties.
 
 ### Example
 ```ruby
@@ -229,7 +229,7 @@ opts = {
 }
 
 begin
-  #Update the settings for an existing phone number on your account
+  #Update the settings for an existing phone number on your account.
   result = api_instance.replace_account_phone_number(account_id, number_id, opts)
   p result
 rescue SwaggerClient::ApiError => e

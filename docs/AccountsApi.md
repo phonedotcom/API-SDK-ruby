@@ -5,7 +5,7 @@ All URIs are relative to *https://api.phone.com/v4*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_account**](AccountsApi.md#get_account) | **GET** /accounts/{account_id} | Retrieve details of an individual account
-[**list_accounts**](AccountsApi.md#list_accounts) | **GET** /accounts | Get a list of accounts visible to the authenticated user or client
+[**list_accounts**](AccountsApi.md#list_accounts) | **GET** /accounts | Get a list of accounts visible to the authenticated user or client.
 
 
 # **get_account**
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 Retrieve details of an individual account
 
-This service shows the details of an individual account. See Accounts for more info on the properties.
+Retrieve details of an individual account. See Accounts for more info on the properties.
 
 ### Example
 ```ruby
@@ -65,9 +65,9 @@ Name | Type | Description  | Notes
 # **list_accounts**
 > ListAccounts list_accounts(opts)
 
-Get a list of accounts visible to the authenticated user or client
+Get a list of accounts visible to the authenticated user or client.
 
-This service lists the accounts accessible to the authenticated client. In most cases, there will only be one such account. See Accounts for more info on the properties.
+Get a list of accounts visible to the authenticated user or client. In most cases, there will only be one such account. See Accounts for more info on the properties.
 
 ### Example
 ```ruby
@@ -92,7 +92,7 @@ opts = {
 }
 
 begin
-  #Get a list of accounts visible to the authenticated user or client
+  #Get a list of accounts visible to the authenticated user or client.
   result = api_instance.list_accounts(opts)
   p result
 rescue SwaggerClient::ApiError => e

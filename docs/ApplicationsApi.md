@@ -4,16 +4,16 @@ All URIs are relative to *https://api.phone.com/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_account_application**](ApplicationsApi.md#get_account_application) | **GET** /accounts/{account_id}/applications/{application_id} | Show details of an individual application
-[**list_account_applications**](ApplicationsApi.md#list_account_applications) | **GET** /accounts/{account_id}/applications | Get a list of applications you have defined
+[**get_account_application**](ApplicationsApi.md#get_account_application) | **GET** /accounts/{account_id}/applications/{application_id} | Show details of an individual Application on a given account.
+[**list_account_applications**](ApplicationsApi.md#list_account_applications) | **GET** /accounts/{account_id}/applications | This service lists the Applications on a given account
 
 
 # **get_account_application**
 > ApplicationFull get_account_application(account_id, application_id)
 
-Show details of an individual application
+Show details of an individual Application on a given account.
 
-
+Show details of an individual Application on a given account.
 
 ### Example
 ```ruby
@@ -35,7 +35,7 @@ application_id = 56 # Integer | Application ID
 
 
 begin
-  #Show details of an individual application
+  #Show details of an individual Application on a given account.
   result = api_instance.get_account_application(account_id, application_id)
   p result
 rescue SwaggerClient::ApiError => e
@@ -68,9 +68,9 @@ Name | Type | Description  | Notes
 # **list_account_applications**
 > ListApplications list_account_applications(account_id, , opts)
 
-Get a list of applications you have defined
+This service lists the Applications on a given account
 
-Get a list of an account available applications
+Show details of an individual Application on a given account.
 
 ### Example
 ```ruby
@@ -99,7 +99,7 @@ opts = {
 }
 
 begin
-  #Get a list of applications you have defined
+  #This service lists the Applications on a given account
   result = api_instance.list_account_applications(account_id, , opts)
   p result
 rescue SwaggerClient::ApiError => e

@@ -5,7 +5,7 @@ All URIs are relative to *https://api.phone.com/v4*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_account_express_srv_code**](ExpressservicecodesApi.md#get_account_express_srv_code) | **GET** /accounts/{account_id}/express-service-codes/{code_id} | Show details of an account Express Service Code
-[**list_account_express_srv_codes**](ExpressservicecodesApi.md#list_account_express_srv_codes) | **GET** /accounts/{account_id}/express-service-codes | Get the Express Service Code associated with your account in list format
+[**list_account_express_srv_codes**](ExpressservicecodesApi.md#list_account_express_srv_codes) | **GET** /accounts/{account_id}/express-service-codes | Get the Express Service Code associated with your account in list format.
 
 
 # **get_account_express_srv_code**
@@ -68,9 +68,9 @@ Name | Type | Description  | Notes
 # **list_account_express_srv_codes**
 > ListExpressServiceCodes list_account_express_srv_codes(account_id, , opts)
 
-Get the Express Service Code associated with your account in list format
+Get the Express Service Code associated with your account in list format.
 
-See Express Service Codes for more detail.
+Get the Express Service Code associated with your account in list format. See Express Service Codes for more detail.
 
 ### Example
 ```ruby
@@ -93,7 +93,7 @@ opts = {
 }
 
 begin
-  #Get the Express Service Code associated with your account in list format
+  #Get the Express Service Code associated with your account in list format.
   result = api_instance.list_account_express_srv_codes(account_id, , opts)
   p result
 rescue SwaggerClient::ApiError => e

@@ -4,19 +4,19 @@ All URIs are relative to *https://api.phone.com/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_account_trunk**](TrunksApi.md#create_account_trunk) | **POST** /accounts/{account_id}/trunks | Add a trunk record with SIP information
-[**delete_account_trunk**](TrunksApi.md#delete_account_trunk) | **DELETE** /accounts/{account_id}/trunks/{trunk_id} | Delete a trunk from account
-[**get_account_trunk**](TrunksApi.md#get_account_trunk) | **GET** /accounts/{account_id}/trunks/{trunk_id} | Show details of an individual trunk
-[**list_account_trunks**](TrunksApi.md#list_account_trunks) | **GET** /accounts/{account_id}/trunks | Get a list of trunks for an account
-[**replace_account_trunk**](TrunksApi.md#replace_account_trunk) | **PUT** /accounts/{account_id}/trunks/{trunk_id} | Replace parameters in a trunk
+[**create_account_trunk**](TrunksApi.md#create_account_trunk) | **POST** /accounts/{account_id}/trunks | Add a trunk record with SIP information.
+[**delete_account_trunk**](TrunksApi.md#delete_account_trunk) | **DELETE** /accounts/{account_id}/trunks/{trunk_id} | Delete a trunk from account.
+[**get_account_trunk**](TrunksApi.md#get_account_trunk) | **GET** /accounts/{account_id}/trunks/{trunk_id} | Show details of an individual trunk.
+[**list_account_trunks**](TrunksApi.md#list_account_trunks) | **GET** /accounts/{account_id}/trunks | Get a list of trunks for an account.
+[**replace_account_trunk**](TrunksApi.md#replace_account_trunk) | **PUT** /accounts/{account_id}/trunks/{trunk_id} | Replace parameters in a trunk.
 
 
 # **create_account_trunk**
 > TrunkFull create_account_trunk(account_id, data)
 
-Add a trunk record with SIP information
+Add a trunk record with SIP information.
 
-For more on the input fields, see Account Trunks.
+Add a trunk record with SIP information. See Account Trunks for more info on the properties.
 
 ### Example
 ```ruby
@@ -38,7 +38,7 @@ data = SwaggerClient::CreateTrunkParams.new # CreateTrunkParams | Trunk data
 
 
 begin
-  #Add a trunk record with SIP information
+  #Add a trunk record with SIP information.
   result = api_instance.create_account_trunk(account_id, data)
   p result
 rescue SwaggerClient::ApiError => e
@@ -69,11 +69,11 @@ Name | Type | Description  | Notes
 
 
 # **delete_account_trunk**
-> DeleteTrunk delete_account_trunk(account_id, trunk_id)
+> DeleteEntry delete_account_trunk(account_id, trunk_id)
 
-Delete a trunk from account
+Delete a trunk from account.
 
-This service deletes a trunk from the account. For more on the properties of trunks, see Account Trunks.
+Delete a trunk from account. See Account Trunks for more info on the properties.
 
 ### Example
 ```ruby
@@ -95,7 +95,7 @@ trunk_id = 56 # Integer | Trunk ID
 
 
 begin
-  #Delete a trunk from account
+  #Delete a trunk from account.
   result = api_instance.delete_account_trunk(account_id, trunk_id)
   p result
 rescue SwaggerClient::ApiError => e
@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeleteTrunk**](DeleteTrunk.md)
+[**DeleteEntry**](DeleteEntry.md)
 
 ### Authorization
 
@@ -128,9 +128,9 @@ Name | Type | Description  | Notes
 # **get_account_trunk**
 > TrunkFull get_account_trunk(account_id, trunk_id)
 
-Show details of an individual trunk
+Show details of an individual trunk.
 
-This service shows the details of an individual Trunk.
+Show details of an individual trunk. See Account Trunks for more info on the properties.
 
 ### Example
 ```ruby
@@ -152,7 +152,7 @@ trunk_id = 56 # Integer | Trunk ID
 
 
 begin
-  #Show details of an individual trunk
+  #Show details of an individual trunk.
   result = api_instance.get_account_trunk(account_id, trunk_id)
   p result
 rescue SwaggerClient::ApiError => e
@@ -185,9 +185,9 @@ Name | Type | Description  | Notes
 # **list_account_trunks**
 > ListTrunks list_account_trunks(account_id, , opts)
 
-Get a list of trunks for an account
+Get a list of trunks for an account.
 
-See Account Trunks for more info on the properties.
+Get a list of trunks for an account. See Account Trunks for more info on the properties.
 
 ### Example
 ```ruby
@@ -216,7 +216,7 @@ opts = {
 }
 
 begin
-  #Get a list of trunks for an account
+  #Get a list of trunks for an account.
   result = api_instance.list_account_trunks(account_id, , opts)
   p result
 rescue SwaggerClient::ApiError => e
@@ -255,9 +255,9 @@ Name | Type | Description  | Notes
 # **replace_account_trunk**
 > TrunkFull replace_account_trunk(account_id, trunk_iddata)
 
-Replace parameters in a trunk
+Replace parameters in a trunk.
 
-For more on the input fields, see Account Trunks.
+Replace parameters in a trunk. See Account Trunks for more info on the properties.
 
 ### Example
 ```ruby
@@ -281,7 +281,7 @@ data = SwaggerClient::CreateTrunkParams.new # CreateTrunkParams | Trunk data
 
 
 begin
-  #Replace parameters in a trunk
+  #Replace parameters in a trunk.
   result = api_instance.replace_account_trunk(account_id, trunk_iddata)
   p result
 rescue SwaggerClient::ApiError => e

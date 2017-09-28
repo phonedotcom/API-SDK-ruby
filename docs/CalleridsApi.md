@@ -4,15 +4,15 @@ All URIs are relative to *https://api.phone.com/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_caller_ids**](CalleridsApi.md#get_caller_ids) | **GET** /accounts/{account_id}/extensions/{extension_id}/caller-ids | Show the Caller ID options a given extension can use
+[**get_caller_ids**](CalleridsApi.md#get_caller_ids) | **GET** /accounts/{account_id}/extensions/{extension_id}/caller-ids | Show the Caller ID options a given extension can use.
 
 
 # **get_caller_ids**
 > ListCallerIds get_caller_ids(account_id, extension_id, , opts)
 
-Show the Caller ID options a given extension can use
+Show the Caller ID options a given extension can use.
 
-Get Caller ID
+Show the Caller ID options a given extension can use. See Intro to Caller IDs for more on the properties.
 
 ### Example
 ```ruby
@@ -43,7 +43,7 @@ opts = {
 }
 
 begin
-  #Show the Caller ID options a given extension can use
+  #Show the Caller ID options a given extension can use.
   result = api_instance.get_caller_ids(account_id, extension_id, , opts)
   p result
 rescue SwaggerClient::ApiError => e

@@ -4,18 +4,18 @@ All URIs are relative to *https://api.phone.com/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_account_extension**](ExtensionsApi.md#create_account_extension) | **POST** /accounts/{account_id}/extensions | Create an individual extension
-[**get_account_extension**](ExtensionsApi.md#get_account_extension) | **GET** /accounts/{account_id}/extensions/{extension_id} | Show details of an individual extension
-[**list_account_extensions**](ExtensionsApi.md#list_account_extensions) | **GET** /accounts/{account_id}/extensions | Get a list of extensions visible to the authenticated user or client
-[**replace_account_extension**](ExtensionsApi.md#replace_account_extension) | **PUT** /accounts/{account_id}/extensions/{extension_id} | Replace an individual extension
+[**create_account_extension**](ExtensionsApi.md#create_account_extension) | **POST** /accounts/{account_id}/extensions | Create an individual extension.
+[**get_account_extension**](ExtensionsApi.md#get_account_extension) | **GET** /accounts/{account_id}/extensions/{extension_id} | Show details of an individual extension.
+[**list_account_extensions**](ExtensionsApi.md#list_account_extensions) | **GET** /accounts/{account_id}/extensions | Get a list of extensions visible to the authenticated user or client.
+[**replace_account_extension**](ExtensionsApi.md#replace_account_extension) | **PUT** /accounts/{account_id}/extensions/{extension_id} | Replace an individual extension.
 
 
 # **create_account_extension**
 > ExtensionFull create_account_extension(account_id, , opts)
 
-Create an individual extension
+Create an individual extension.
 
-This service shows how to create a virtual extension.
+Create an individual extension. See extension for more details.
 
 ### Example
 ```ruby
@@ -38,7 +38,7 @@ opts = {
 }
 
 begin
-  #Create an individual extension
+  #Create an individual extension.
   result = api_instance.create_account_extension(account_id, , opts)
   p result
 rescue SwaggerClient::ApiError => e
@@ -71,9 +71,9 @@ Name | Type | Description  | Notes
 # **get_account_extension**
 > ExtensionFull get_account_extension(account_id, extension_id, )
 
-Show details of an individual extension
+Show details of an individual extension.
 
-This service shows the details of an individual Extension.
+Show details of an individual extension. See extension for more details.
 
 ### Example
 ```ruby
@@ -95,7 +95,7 @@ extension_id = 56 # Integer | Extension ID
 
 
 begin
-  #Show details of an individual extension
+  #Show details of an individual extension.
   result = api_instance.get_account_extension(account_id, extension_id, )
   p result
 rescue SwaggerClient::ApiError => e
@@ -128,9 +128,9 @@ Name | Type | Description  | Notes
 # **list_account_extensions**
 > ListExtensions list_account_extensions(account_id, , opts)
 
-Get a list of extensions visible to the authenticated user or client
+Get a list of extensions visible to the authenticated user or client.
 
-This service lists the visible extensions on a given account.
+Get a list of extensions visible to the authenticated user or client. See extension for more details.
 
 ### Example
 ```ruby
@@ -161,7 +161,7 @@ opts = {
 }
 
 begin
-  #Get a list of extensions visible to the authenticated user or client
+  #Get a list of extensions visible to the authenticated user or client.
   result = api_instance.list_account_extensions(account_id, , opts)
   p result
 rescue SwaggerClient::ApiError => e
@@ -202,9 +202,9 @@ Name | Type | Description  | Notes
 # **replace_account_extension**
 > ExtensionFull replace_account_extension(account_id, extension_id, , opts)
 
-Replace an individual extension
+Replace an individual extension.
 
-This service shows how to update an individual extension.
+Replace an individual extension. See extension for more details.
 
 ### Example
 ```ruby
@@ -229,7 +229,7 @@ opts = {
 }
 
 begin
-  #Replace an individual extension
+  #Replace an individual extension.
   result = api_instance.replace_account_extension(account_id, extension_id, , opts)
   p result
 rescue SwaggerClient::ApiError => e

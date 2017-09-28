@@ -4,19 +4,19 @@ All URIs are relative to *https://api.phone.com/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_account_extension_contact**](ContactsApi.md#create_account_extension_contact) | **POST** /accounts/{account_id}/extensions/{extension_id}/contacts | Add a new address book contact for an extension
-[**delete_account_extension_contact**](ContactsApi.md#delete_account_extension_contact) | **DELETE** /accounts/{account_id}/extensions/{extension_id}/contacts/{contact_id} | 
-[**get_account_extension_contact**](ContactsApi.md#get_account_extension_contact) | **GET** /accounts/{account_id}/extensions/{extension_id}/contacts/{contact_id} | Retrieve the details of an address book contact
-[**list_account_extension_contacts**](ContactsApi.md#list_account_extension_contacts) | **GET** /accounts/{account_id}/extensions/{extension_id}/contacts | Show a list of address book contacts
-[**replace_account_extension_contact**](ContactsApi.md#replace_account_extension_contact) | **PUT** /accounts/{account_id}/extensions/{extension_id}/contacts/{contact_id} | 
+[**create_account_extension_contact**](ContactsApi.md#create_account_extension_contact) | **POST** /accounts/{account_id}/extensions/{extension_id}/contacts | Add a new address book contact for an extension.
+[**delete_account_extension_contact**](ContactsApi.md#delete_account_extension_contact) | **DELETE** /accounts/{account_id}/extensions/{extension_id}/contacts/{contact_id} | Delete a contact from the address book.
+[**get_account_extension_contact**](ContactsApi.md#get_account_extension_contact) | **GET** /accounts/{account_id}/extensions/{extension_id}/contacts/{contact_id} | Retrieve the details of an address book contact.
+[**list_account_extension_contacts**](ContactsApi.md#list_account_extension_contacts) | **GET** /accounts/{account_id}/extensions/{extension_id}/contacts | Show the Caller ID options a given extension can use.
+[**replace_account_extension_contact**](ContactsApi.md#replace_account_extension_contact) | **PUT** /accounts/{account_id}/extensions/{extension_id}/contacts/{contact_id} | Update the info of a contact in the address book.
 
 
 # **create_account_extension_contact**
 > ContactFull create_account_extension_contact(account_id, extension_id, , opts)
 
-Add a new address book contact for an extension
+Add a new address book contact for an extension.
 
-For more on the input fields, see Account Contacts.
+Add a new address book contact for an extension. See Account Contacts for more info on the fields in each item.
 
 ### Example
 ```ruby
@@ -41,7 +41,7 @@ opts = {
 }
 
 begin
-  #Add a new address book contact for an extension
+  #Add a new address book contact for an extension.
   result = api_instance.create_account_extension_contact(account_id, extension_id, , opts)
   p result
 rescue SwaggerClient::ApiError => e
@@ -73,11 +73,11 @@ Name | Type | Description  | Notes
 
 
 # **delete_account_extension_contact**
-> DeleteContact delete_account_extension_contact(account_id, extension_id, contact_id)
+> DeleteEntry delete_account_extension_contact(account_id, extension_id, contact_id)
 
+Delete a contact from the address book.
 
-
-
+Delete a contact from the address book. See Account Contacts for more info on the fields in each item.
 
 ### Example
 ```ruby
@@ -101,7 +101,7 @@ contact_id = 56 # Integer | Contact ID
 
 
 begin
-  #
+  #Delete a contact from the address book.
   result = api_instance.delete_account_extension_contact(account_id, extension_id, contact_id)
   p result
 rescue SwaggerClient::ApiError => e
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeleteContact**](DeleteContact.md)
+[**DeleteEntry**](DeleteEntry.md)
 
 ### Authorization
 
@@ -135,9 +135,9 @@ Name | Type | Description  | Notes
 # **get_account_extension_contact**
 > ContactFull get_account_extension_contact(account_id, extension_id, contact_id)
 
-Retrieve the details of an address book contact
+Retrieve the details of an address book contact.
 
-For more info on the fields shown, see Account Contacts.
+Retrieve the details of an address book contact. See Account Contacts for more info on the fields in each item.
 
 ### Example
 ```ruby
@@ -161,7 +161,7 @@ contact_id = 56 # Integer | Contact ID
 
 
 begin
-  #Retrieve the details of an address book contact
+  #Retrieve the details of an address book contact.
   result = api_instance.get_account_extension_contact(account_id, extension_id, contact_id)
   p result
 rescue SwaggerClient::ApiError => e
@@ -195,9 +195,9 @@ Name | Type | Description  | Notes
 # **list_account_extension_contacts**
 > ListContacts list_account_extension_contacts(account_id, extension_id, , opts)
 
-Show a list of address book contacts
+Show the Caller ID options a given extension can use.
 
-See Account Contacts for more info on the fields in each item.
+Show the Caller ID options a given extension can use. See Intro to Caller IDs for more on the properties.
 
 ### Example
 ```ruby
@@ -229,7 +229,7 @@ opts = {
 }
 
 begin
-  #Show a list of address book contacts
+  #Show the Caller ID options a given extension can use.
   result = api_instance.list_account_extension_contacts(account_id, extension_id, , opts)
   p result
 rescue SwaggerClient::ApiError => e
@@ -270,9 +270,9 @@ Name | Type | Description  | Notes
 # **replace_account_extension_contact**
 > ContactFull replace_account_extension_contact(account_id, extension_id, contact_id, opts)
 
+Update the info of a contact in the address book.
 
-
-For more on the input fields, see Account Contacts.
+Update the info of a contact in the address book. See Account Contacts for more info on the fields in each item.
 
 ### Example
 ```ruby
@@ -299,7 +299,7 @@ opts = {
 }
 
 begin
-  #
+  #Update the info of a contact in the address book.
   result = api_instance.replace_account_extension_contact(account_id, extension_id, contact_id, opts)
   p result
 rescue SwaggerClient::ApiError => e

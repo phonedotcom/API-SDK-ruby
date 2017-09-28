@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 Add a subaccount for the authenticated user or client
 
-This service shows the details of an individual Subaccount.
+Add a subaccount for the authenticated user or client
 
 ### Example
 ```ruby
@@ -31,7 +31,7 @@ api_instance = SwaggerClient::SubaccountsApi.new
 
 account_id = 56 # Integer | Account ID
 
-data = SwaggerClient::CreateSubaccountParams.new # CreateSubaccountParams | SMS data
+data = SwaggerClient::CreateSubaccountParams.new # CreateSubaccountParams | Subaccount data
 
 
 begin
@@ -48,7 +48,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **Integer**| Account ID | 
- **data** | [**CreateSubaccountParams**](CreateSubaccountParams.md)| SMS data | 
+ **data** | [**CreateSubaccountParams**](CreateSubaccountParams.md)| Subaccount data | 
 
 ### Return type
 
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 Get a list of subaccounts for the authenticated user or client
 
-This service lists the Subaccount of the authenticated client. In most cases, there will not be any.
+Get a list of subaccounts for the authenticated user or client
 
 ### Example
 ```ruby

@@ -4,19 +4,19 @@ All URIs are relative to *https://api.phone.com/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_account_menu**](MenusApi.md#create_account_menu) | **POST** /accounts/{account_id}/menus | Create an individual menu
-[**delete_account_menu**](MenusApi.md#delete_account_menu) | **DELETE** /accounts/{account_id}/menus/{menu_id} | Delete an individual menu
-[**get_account_menu**](MenusApi.md#get_account_menu) | **GET** /accounts/{account_id}/menus/{menu_id} | Show details of an individual menu
-[**list_account_menus**](MenusApi.md#list_account_menus) | **GET** /accounts/{account_id}/menus | Get a list of menus for an account
-[**replace_account_menu**](MenusApi.md#replace_account_menu) | **PUT** /accounts/{account_id}/menus/{menu_id} | Replace an individual menu
+[**create_account_menu**](MenusApi.md#create_account_menu) | **POST** /accounts/{account_id}/menus | Create an individual menu.
+[**delete_account_menu**](MenusApi.md#delete_account_menu) | **DELETE** /accounts/{account_id}/menus/{menu_id} | Delete an individual menu.
+[**get_account_menu**](MenusApi.md#get_account_menu) | **GET** /accounts/{account_id}/menus/{menu_id} | Show details of an individual menu.
+[**list_account_menus**](MenusApi.md#list_account_menus) | **GET** /accounts/{account_id}/menus | Get a list of menus for an account.
+[**replace_account_menu**](MenusApi.md#replace_account_menu) | **PUT** /accounts/{account_id}/menus/{menu_id} | Replace an individual menu.
 
 
 # **create_account_menu**
 > MenuFull create_account_menu(account_id, , opts)
 
-Create an individual menu
+Create an individual menu.
 
-This service creates an individual menu. See Account Menus for more info on the properties.
+Create an individual menu. See Account Menus for more info on the properties.
 
 ### Example
 ```ruby
@@ -39,7 +39,7 @@ opts = {
 }
 
 begin
-  #Create an individual menu
+  #Create an individual menu.
   result = api_instance.create_account_menu(account_id, , opts)
   p result
 rescue SwaggerClient::ApiError => e
@@ -70,11 +70,11 @@ Name | Type | Description  | Notes
 
 
 # **delete_account_menu**
-> DeleteMenu delete_account_menu(account_id, menu_id)
+> DeleteEntry delete_account_menu(account_id, menu_id)
 
-Delete an individual menu
+Delete an individual menu.
 
-See Account Menus for more info on the properties.
+Delete an individual menu. See Account Menus for more info on the properties.
 
 ### Example
 ```ruby
@@ -96,7 +96,7 @@ menu_id = 56 # Integer | Menu ID
 
 
 begin
-  #Delete an individual menu
+  #Delete an individual menu.
   result = api_instance.delete_account_menu(account_id, menu_id)
   p result
 rescue SwaggerClient::ApiError => e
@@ -113,7 +113,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeleteMenu**](DeleteMenu.md)
+[**DeleteEntry**](DeleteEntry.md)
 
 ### Authorization
 
@@ -129,9 +129,9 @@ Name | Type | Description  | Notes
 # **get_account_menu**
 > MenuFull get_account_menu(account_id, menu_id)
 
-Show details of an individual menu
+Show details of an individual menu.
 
-This service shows the details of an individual Menu.
+Show details of an individual menu. See Account Menus for more info on the properties.
 
 ### Example
 ```ruby
@@ -153,7 +153,7 @@ menu_id = 56 # Integer | Menu ID
 
 
 begin
-  #Show details of an individual menu
+  #Show details of an individual menu.
   result = api_instance.get_account_menu(account_id, menu_id)
   p result
 rescue SwaggerClient::ApiError => e
@@ -186,9 +186,9 @@ Name | Type | Description  | Notes
 # **list_account_menus**
 > ListMenus list_account_menus(account_id, , opts)
 
-Get a list of menus for an account
+Get a list of menus for an account.
 
-See Account Menus for more info on the properties.
+Get a list of menus for an account. See Account Menus for more info on the properties.
 
 ### Example
 ```ruby
@@ -217,7 +217,7 @@ opts = {
 }
 
 begin
-  #Get a list of menus for an account
+  #Get a list of menus for an account.
   result = api_instance.list_account_menus(account_id, , opts)
   p result
 rescue SwaggerClient::ApiError => e
@@ -256,9 +256,9 @@ Name | Type | Description  | Notes
 # **replace_account_menu**
 > MenuFull replace_account_menu(account_id, menu_id, opts)
 
-Replace an individual menu
+Replace an individual menu.
 
-See Account Menus for more info on the properties.
+Replace an individual menu. See Account Menus for more info on the properties.
 
 ### Example
 ```ruby
@@ -283,7 +283,7 @@ opts = {
 }
 
 begin
-  #Replace an individual menu
+  #Replace an individual menu.
   result = api_instance.replace_account_menu(account_id, menu_id, opts)
   p result
 rescue SwaggerClient::ApiError => e

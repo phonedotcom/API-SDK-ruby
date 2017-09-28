@@ -4,19 +4,19 @@ All URIs are relative to *https://api.phone.com/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_account_queue**](QueuesApi.md#create_account_queue) | **POST** /accounts/{account_id}/queues | Create a queue
-[**delete_account_queue**](QueuesApi.md#delete_account_queue) | **DELETE** /accounts/{account_id}/queues/{queue_id} | Delete a queue
-[**get_account_queue**](QueuesApi.md#get_account_queue) | **GET** /accounts/{account_id}/queues/{queue_id} | Show details of an individual queue
-[**list_account_queues**](QueuesApi.md#list_account_queues) | **GET** /accounts/{account_id}/queues | Get a list of queues for an account
-[**replace_account_queue**](QueuesApi.md#replace_account_queue) | **PUT** /accounts/{account_id}/queues/{queue_id} | Replace a queue
+[**create_account_queue**](QueuesApi.md#create_account_queue) | **POST** /accounts/{account_id}/queues | Create a queue.
+[**delete_account_queue**](QueuesApi.md#delete_account_queue) | **DELETE** /accounts/{account_id}/queues/{queue_id} | Delete a queue.
+[**get_account_queue**](QueuesApi.md#get_account_queue) | **GET** /accounts/{account_id}/queues/{queue_id} | Show details of an individual queue.
+[**list_account_queues**](QueuesApi.md#list_account_queues) | **GET** /accounts/{account_id}/queues | Get a list of queues for an account.
+[**replace_account_queue**](QueuesApi.md#replace_account_queue) | **PUT** /accounts/{account_id}/queues/{queue_id} | Replace a queue.
 
 
 # **create_account_queue**
 > QueueFull create_account_queue(account_id, , opts)
 
-Create a queue
+Create a queue.
 
-For more on the input fields, see Account Queues.
+Create a queue. See Account Queues for more info on the properties.
 
 ### Example
 ```ruby
@@ -39,7 +39,7 @@ opts = {
 }
 
 begin
-  #Create a queue
+  #Create a queue.
   result = api_instance.create_account_queue(account_id, , opts)
   p result
 rescue SwaggerClient::ApiError => e
@@ -70,11 +70,11 @@ Name | Type | Description  | Notes
 
 
 # **delete_account_queue**
-> DeleteQueue delete_account_queue(account_id, queue_id)
+> DeleteEntry delete_account_queue(account_id, queue_id)
 
-Delete a queue
+Delete a queue.
 
-This service a queue from the account. For more information on queue properties, see Account Queues.
+Delete a queue. See Account Queues for more info on the properties.
 
 ### Example
 ```ruby
@@ -96,7 +96,7 @@ queue_id = 56 # Integer | Queue ID
 
 
 begin
-  #Delete a queue
+  #Delete a queue.
   result = api_instance.delete_account_queue(account_id, queue_id)
   p result
 rescue SwaggerClient::ApiError => e
@@ -113,7 +113,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeleteQueue**](DeleteQueue.md)
+[**DeleteEntry**](DeleteEntry.md)
 
 ### Authorization
 
@@ -129,9 +129,9 @@ Name | Type | Description  | Notes
 # **get_account_queue**
 > QueueFull get_account_queue(account_id, queue_id)
 
-Show details of an individual queue
+Show details of an individual queue.
 
-This service shows the details of an individual queue. For more on the input fields, see Account Queues.
+Show details of an individual queue. See Account Queues for more info on the properties.
 
 ### Example
 ```ruby
@@ -153,7 +153,7 @@ queue_id = 56 # Integer | Queue ID
 
 
 begin
-  #Show details of an individual queue
+  #Show details of an individual queue.
   result = api_instance.get_account_queue(account_id, queue_id)
   p result
 rescue SwaggerClient::ApiError => e
@@ -186,9 +186,9 @@ Name | Type | Description  | Notes
 # **list_account_queues**
 > ListQueues list_account_queues(account_id, , opts)
 
-Get a list of queues for an account
+Get a list of queues for an account.
 
-The List Queues service lists all the queues belong to the account. See Account Queues for more info on the properties.
+Get a list of queues for an account. See Account Queues for more info on the properties.
 
 ### Example
 ```ruby
@@ -217,7 +217,7 @@ opts = {
 }
 
 begin
-  #Get a list of queues for an account
+  #Get a list of queues for an account.
   result = api_instance.list_account_queues(account_id, , opts)
   p result
 rescue SwaggerClient::ApiError => e
@@ -256,9 +256,9 @@ Name | Type | Description  | Notes
 # **replace_account_queue**
 > QueueFull replace_account_queue(account_id, queue_id, opts)
 
-Replace a queue
+Replace a queue.
 
-The Replace Queue service replaces the parameters of a queue. For more on the input fields, see Account Queues.
+Replace a queue. See Account Queues for more info on the properties.
 
 ### Example
 ```ruby
@@ -283,7 +283,7 @@ opts = {
 }
 
 begin
-  #Replace a queue
+  #Replace a queue.
   result = api_instance.replace_account_queue(account_id, queue_id, opts)
   p result
 rescue SwaggerClient::ApiError => e

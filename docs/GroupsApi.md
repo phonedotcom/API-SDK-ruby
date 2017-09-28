@@ -4,19 +4,19 @@ All URIs are relative to *https://api.phone.com/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_account_extension_contact_group**](GroupsApi.md#create_account_extension_contact_group) | **POST** /accounts/{account_id}/extensions/{extension_id}/contact-groups | 
-[**delete_account_extension_contact_group**](GroupsApi.md#delete_account_extension_contact_group) | **DELETE** /accounts/{account_id}/extensions/{extension_id}/contact-groups/{group_id} | Delete an addressbook group
-[**get_account_extension_contact_group**](GroupsApi.md#get_account_extension_contact_group) | **GET** /accounts/{account_id}/extensions/{extension_id}/contact-groups/{group_id} | 
-[**list_account_extension_contact_groups**](GroupsApi.md#list_account_extension_contact_groups) | **GET** /accounts/{account_id}/extensions/{extension_id}/contact-groups | Show a list of contact groups belonging to an extension
-[**replace_account_extension_contact_group**](GroupsApi.md#replace_account_extension_contact_group) | **PUT** /accounts/{account_id}/extensions/{extension_id}/contact-groups/{group_id} | 
+[**create_account_extension_contact_group**](GroupsApi.md#create_account_extension_contact_group) | **POST** /accounts/{account_id}/extensions/{extension_id}/contact-groups | Add a new contact group to an account extension.
+[**delete_account_extension_contact_group**](GroupsApi.md#delete_account_extension_contact_group) | **DELETE** /accounts/{account_id}/extensions/{extension_id}/contact-groups/{group_id} | Delete a contact group from the address book.
+[**get_account_extension_contact_group**](GroupsApi.md#get_account_extension_contact_group) | **GET** /accounts/{account_id}/extensions/{extension_id}/contact-groups/{group_id} | Retrieve the information of a contact group.
+[**list_account_extension_contact_groups**](GroupsApi.md#list_account_extension_contact_groups) | **GET** /accounts/{account_id}/extensions/{extension_id}/contact-groups | Show a list of contact groups belonging to an extension.
+[**replace_account_extension_contact_group**](GroupsApi.md#replace_account_extension_contact_group) | **PUT** /accounts/{account_id}/extensions/{extension_id}/contact-groups/{group_id} | Update the information of a contact group.
 
 
 # **create_account_extension_contact_group**
 > GroupFull create_account_extension_contact_group(account_id, extension_id, data)
 
+Add a new contact group to an account extension.
 
-
-See Account Contact Groups for more info on the properties.
+Add a new contact group to an account extension. See Account Contact Groups for details on the properties.
 
 ### Example
 ```ruby
@@ -36,11 +36,11 @@ account_id = 56 # Integer | Account ID
 
 extension_id = 56 # Integer | Extension ID
 
-data = SwaggerClient::CreateGroupParams.new # CreateGroupParams | Group name
+data = SwaggerClient::CreateGroupParams.new # CreateGroupParams | Group data
 
 
 begin
-  #
+  #Add a new contact group to an account extension.
   result = api_instance.create_account_extension_contact_group(account_id, extension_id, data)
   p result
 rescue SwaggerClient::ApiError => e
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **Integer**| Account ID | 
  **extension_id** | **Integer**| Extension ID | 
- **data** | [**CreateGroupParams**](CreateGroupParams.md)| Group name | 
+ **data** | [**CreateGroupParams**](CreateGroupParams.md)| Group data | 
 
 ### Return type
 
@@ -72,11 +72,11 @@ Name | Type | Description  | Notes
 
 
 # **delete_account_extension_contact_group**
-> DeleteGroup delete_account_extension_contact_group(account_id, extension_id, group_id)
+> DeleteEntry delete_account_extension_contact_group(account_id, extension_id, group_id)
 
-Delete an addressbook group
+Delete a contact group from the address book.
 
-
+Delete a contact group from the address book. See Account Contact Groups for details on the properties.
 
 ### Example
 ```ruby
@@ -100,7 +100,7 @@ group_id = 56 # Integer | Group ID
 
 
 begin
-  #Delete an addressbook group
+  #Delete a contact group from the address book.
   result = api_instance.delete_account_extension_contact_group(account_id, extension_id, group_id)
   p result
 rescue SwaggerClient::ApiError => e
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeleteGroup**](DeleteGroup.md)
+[**DeleteEntry**](DeleteEntry.md)
 
 ### Authorization
 
@@ -134,9 +134,9 @@ Name | Type | Description  | Notes
 # **get_account_extension_contact_group**
 > GroupFull get_account_extension_contact_group(account_id, extension_id, group_id)
 
+Retrieve the information of a contact group.
 
-
-See Account Contact Groups for more info on the properties.
+Retrieve the information of a contact group. See Account Contact Groups for details on the properties.
 
 ### Example
 ```ruby
@@ -160,7 +160,7 @@ group_id = 56 # Integer | Group ID
 
 
 begin
-  #
+  #Retrieve the information of a contact group.
   result = api_instance.get_account_extension_contact_group(account_id, extension_id, group_id)
   p result
 rescue SwaggerClient::ApiError => e
@@ -194,9 +194,9 @@ Name | Type | Description  | Notes
 # **list_account_extension_contact_groups**
 > ListGroups list_account_extension_contact_groups(account_id, extension_id, , opts)
 
-Show a list of contact groups belonging to an extension
+Show a list of contact groups belonging to an extension.
 
-See Account Contact Groups for details on the properties.
+Show a list of contact groups belonging to an extension. See Account Contact Groups for details on the properties.
 
 ### Example
 ```ruby
@@ -227,7 +227,7 @@ opts = {
 }
 
 begin
-  #Show a list of contact groups belonging to an extension
+  #Show a list of contact groups belonging to an extension.
   result = api_instance.list_account_extension_contact_groups(account_id, extension_id, , opts)
   p result
 rescue SwaggerClient::ApiError => e
@@ -267,9 +267,9 @@ Name | Type | Description  | Notes
 # **replace_account_extension_contact_group**
 > GroupFull replace_account_extension_contact_group(account_id, extension_id, group_iddata)
 
+Update the information of a contact group.
 
-
-See Account Contact Groups for more info on the properties.
+Update the information of a contact group. See Account Contact Groups for details on the properties.
 
 ### Example
 ```ruby
@@ -291,11 +291,11 @@ extension_id = 56 # Integer | Extension ID
 
 group_id = 56 # Integer | Group ID
 
-data = SwaggerClient::CreateGroupParams.new # CreateGroupParams | Group name
+data = SwaggerClient::CreateGroupParams.new # CreateGroupParams | Group data
 
 
 begin
-  #
+  #Update the information of a contact group.
   result = api_instance.replace_account_extension_contact_group(account_id, extension_id, group_iddata)
   p result
 rescue SwaggerClient::ApiError => e
@@ -310,7 +310,7 @@ Name | Type | Description  | Notes
  **account_id** | **Integer**| Account ID | 
  **extension_id** | **Integer**| Extension ID | 
  **group_id** | **Integer**| Group ID | 
- **data** | [**CreateGroupParams**](CreateGroupParams.md)| Group name | 
+ **data** | [**CreateGroupParams**](CreateGroupParams.md)| Group data | 
 
 ### Return type
 

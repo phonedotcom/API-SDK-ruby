@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 Show details of an individual schedule
 
-This service shows the details of an individual schedule.
+Show details of an individual schedule
 
 ### Example
 ```ruby
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 Get a list of schedules for an account
 
-See Intro to Schedules for more info on the properties.
+Get a list of schedules for an account
 
 ### Example
 ```ruby
